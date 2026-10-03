@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TripMate - Smart Trip Planner</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         Navigation Bar
+    ========================== -->
+
+    <nav>
+
+        <div class="logo">
+            ✈️ TripMate
+        </div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#plan-trip">Plan Trip</a></li>
+            <li><a href="#destinations">Destinations</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#budget">Budget</a></li>
+            <li><a href="#checklist">Checklist</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#rating">Rate Us ⭐</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================
+         Hero Section
+    ========================== -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <p class="hero-tagline">
+                ✈️ Your Smart Travel Companion
+            </p>
+
+            <h1>
+                Plan Your Trip.
+                <span>Travel Smarter.</span>
+            </h1>
+
+            <p class="hero-description">
+                Create your itinerary, calculate your budget,
+                explore destinations and prepare your travel checklist
+                — all in one place.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#plan-trip" class="hero-btn">
+                    Start Planning ✈️
+                </a>
+
+                <a href="#destinations" class="hero-btn secondary-btn">
+                    Explore Destinations
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         Plan Your Trip
+    ========================== -->
+
+    <section id="plan-trip">
+
+        <h2>Plan Your Trip</h2>
+
+        <p class="section-description">
+            Enter your travel details and let TripMate create
+            a simple itinerary for you.
+        </p>
+
+        <form id="trip-form">
+
+            <div class="form-group">
+
+                <label for="starting-city">
+                    Starting City
+                </label>
+
+                <input
+                    type="text"
+                    id="starting-city"
+                    placeholder="Enter your starting city"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="destination">
+                    Destination
+                </label>
+
+                <input
+                    type="text"
+                    id="destination"
+                    placeholder="Where do you want to go?"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="travelers">
+                    Number of Travelers
+                </label>
+
+                <input
+                    type="number"
+                    id="travelers"
+                    min="1"
+                    placeholder="e.g. 2"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="start-date">
+                    Start Date
+                </label>
+
+                <input
+                    type="date"
+                    id="start-date"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="end-date">
+                    End Date
+                </label>
+
+                <input
+                    type="date"
+                    id="end-date"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="travel-type">
+                    Travel Type
+                </label>
+
+                <select id="travel-type" required>
+
+                    <option value="">
+                        Select travel type
+                    </option>
+
+                    <option value="Solo">
+                        Solo
+                    </option>
+
+                    <option value="Friends">
+                        Friends
+                    </option>
+
+                    <option value="Family">
+                        Family
+                    </option>
+
+                    <option value="Couple">
+                        Couple
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="budget">
+                    Budget
+                </label>
+
+                <input
+                    type="number"
+                    id="budget"
+                    placeholder="Enter your budget"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="travel-style">
+                    Travel Style
+                </label>
+
+                <select id="travel-style" required>
+
+                    <option value="">
+                        Select travel style
+                    </option>
+
+                    <option value="Adventure">
+                        Adventure
+                    </option>
+
+                    <option value="Relaxation">
+                        Relaxation
+                    </option>
+
+                    <option value="Nature">
+                        Nature
+                    </option>
+
+                    <option value="Culture">
+                        Culture
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button type="submit">
+                Generate My Trip ✈️
+            </button>
+            <button type="reset" id="reset-trip">Clear Form ↻</button>
+
+        </form>
+
+
+        <!-- Generated Itinerary -->
+
+        <div id="itinerary-result"></div>
+
+    </section>
+
+
+    <!-- =========================
+         Popular Destinations
+    ========================== -->
+
+    <section id="destinations">
+
+        <h2>Popular Destinations</h2>
+
+        <p class="section-description">
+            Explore some of the most popular travel destinations in India.
+        </p>
+
+        <div class="destination-container">
+
+
+            <!-- Manali -->
+
+            <div class="destination-card">
+
+                <div class="destination-icon">
+                    🏔️
+                </div>
+
+                <h3>Manali</h3>
+
+                <p>
+                    Enjoy beautiful mountains, snow, adventure
+                    activities and peaceful views.
+                </p>
+
+                <span class="tag">
+                    Adventure
+                </span>
+
+            </div>
+
+
+            <!-- Goa -->
+
+            <div class="destination-card">
+
+                <div class="destination-icon">
+                    🏖️
+                </div>
+
+                <h3>Goa</h3>
+
+                <p>
+                    Relax on beautiful beaches and enjoy a fun,
+                    exciting holiday.
+                </p>
+
+                <span class="tag">
+                    Beach
+                </span>
+
+            </div>
+
+
+            <!-- Jaipur -->
+
+            <div class="destination-card">
+
+                <div class="destination-icon">
+                    🏰
+                </div>
+
+                <h3>Jaipur</h3>
+
+                <p>
+                    Explore royal palaces, historic forts and
+                    colourful Rajasthani culture.
+                </p>
+
+                <span class="tag">
+                    Heritage
+                </span>
+
+            </div>
+
+
+            <!-- Kerala -->
+
+            <div class="destination-card">
+
+                <div class="destination-icon">
+                    🌿
+                </div>
+
+                <h3>Kerala</h3>
+
+                <p>
+                    Experience peaceful backwaters, greenery
+                    and beautiful natural landscapes.
+                </p>
+
+                <span class="tag">
+                    Nature
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         How TripMate Works
+    ========================== -->
+
+    <section id="how-it-works">
+
+        <h2>How TripMate Works</h2>
+
+        <p class="section-description">
+            Plan your complete trip in just a few simple steps.
+        </p>
+
+        <div class="steps-container">
+
+
+            <div class="step-card">
+
+                <div class="step-number">
+                    1
+                </div>
+
+                <h3>Enter Details</h3>
+
+                <p>
+                    Enter your destination, travel dates,
+                    number of travelers and travel preferences.
+                </p>
+
+            </div>
+
+
+            <div class="step-card">
+
+                <div class="step-number">
+                    2
+                </div>
+
+                <h3>Generate Trip</h3>
+
+                <p>
+                    TripMate creates a simple day-by-day
+                    itinerary based on your preferences.
+                </p>
+
+            </div>
+
+
+            <div class="step-card">
+
+                <div class="step-number">
+                    3
+                </div>
+
+                <h3>Plan Your Budget</h3>
+
+                <p>
+                    Use the budget calculator to estimate
+                    your approximate travel expenses.
+                </p>
+
+            </div>
+
+
+            <div class="step-card">
+
+                <div class="step-number">
+                    4
+                </div>
+
+                <h3>Pack & Travel</h3>
+
+                <p>
+                    Check your travel checklist and get
+                    ready for your journey.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         Budget Calculator
+    ========================== -->
+
+    <section id="budget">
+
+        <h2>Trip Budget Calculator</h2>
+
+        <p class="section-description">
+            Estimate your approximate trip expenses.
+        </p>
+
+        <div class="budget-calculator">
+
+
+            <div class="budget-input">
+
+                <label for="budget-travelers">
+                    Number of Travelers
+                </label>
+
+                <input
+                    type="number"
+                    id="budget-travelers"
+                    min="1"
+                    placeholder="Enter number of travelers"
+                >
+
+            </div>
+
+
+            <div class="budget-input">
+
+                <label for="budget-days">
+                    Number of Days
+                </label>
+
+                <input
+                    type="number"
+                    id="budget-days"
+                    min="1"
+                    placeholder="Enter number of days"
+                >
+
+            </div>
+
+
+            <div class="budget-input">
+
+                <label for="budget-type">
+                    Budget Type
+                </label>
+
+                <select id="budget-type">
+
+                    <option value="">
+                        Select budget
+                    </option>
+
+                    <option value="budget">
+                        Budget Friendly
+                    </option>
+
+                    <option value="moderate">
+                        Moderate
+                    </option>
+
+                    <option value="luxury">
+                        Luxury
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="calculate-budget"
+            >
+                Calculate Budget 💰
+            </button>
+
+
+            <div id="budget-result"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         Travel Checklist
+    ========================== -->
+
+    <section id="checklist">
+
+        <h2>Travel Checklist</h2>
+
+        <p class="section-description">
+            Make sure you pack everything you need for your trip.
+        </p>
+
+        <div class="checklist-container">
+
+
+            <label class="checklist-item">
+
+                <input type="checkbox">
+
+                <span>
+                    Clothes and extra outfits
+                </span>
+
+            </label>
+
+
+            <label class="checklist-item">
+
+                <input type="checkbox">
+
+                <span>
+                    ID Proof / Passport
+                </span>
+
+            </label>
+
+
+            <label class="checklist-item">
+
+                <input type="checkbox">
+
+                <span>
+                    Mobile Charger
+                </span>
+
+            </label>
+
+
+            <label class="checklist-item">
+
+                <input type="checkbox">
+
+                <span>
+                    Power Bank
+                </span>
+
+            </label>
+
+
+            <label class="checklist-item">
+
+                <input type="checkbox">
+
+                <span>
+                    Travel Tickets
+                </span>
+
+            </label>
+
+
+            <label class="checklist-item">
+
+                <input type="checkbox">
+
+                <span>
+                    Medicines
+                </span>
+
+            </label>
+
+
+            <label class="checklist-item">
+
+                <input type="checkbox">
+
+                <span>
+                    Toiletries
+                </span>
+
+            </label>
+
+
+            <label class="checklist-item">
+
+                <input type="checkbox">
+
+                <span>
+                    Camera
+                </span>
+
+            </label>
+
+
+        </div>
+
+
+        <p id="checklist-progress">
+            0 of 8 items completed
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         About TripMate
+    ========================== -->
+
+    <section id="about">
+
+        <h2>About TripMate</h2>
+
+        <p class="section-description">
+            A simple smart travel planning website designed to make
+            trip planning easier and more organized.
+        </p>
+
+        <div class="about-container">
+
+
+            <div class="about-card">
+
+                <div class="about-icon">
+                    🗺️
+                </div>
+
+                <h3>Smart Planning</h3>
+
+                <p>
+                    Create a personalized trip plan by entering
+                    your destination, dates, travelers and
+                    travel preferences.
+                </p>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <div class="about-icon">
+                    💰
+                </div>
+
+                <h3>Budget Management</h3>
+
+                <p>
+                    Estimate your travel expenses using the
+                    built-in budget calculator.
+                </p>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <div class="about-icon">
+                    🎒
+                </div>
+
+                <h3>Easy Preparation</h3>
+
+                <p>
+                    Use the travel checklist to make sure you
+                    don't forget important things before your journey.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+    <section id="travel-tips">
+
+    <h2>Smart Travel Tips 💡</h2>
+
+    <p class="section-description">
+        Simple tips to make your journey safer, easier and more enjoyable.
+    </p>
+
+    <div class="tips-container">
+
+        <div class="tip-card">
+            <div class="tip-icon">🎒</div>
+            <h3>Pack Smart</h3>
+            <p>
+                Carry only the essentials and keep your luggage light
+                and organized.
+            </p>
+        </div>
+
+        <div class="tip-card">
+            <div class="tip-icon">💳</div>
+            <h3>Manage Your Budget</h3>
+            <p>
+                Keep some extra money aside for unexpected travel expenses.
+            </p>
+        </div>
+
+        <div class="tip-card">
+            <div class="tip-icon">📱</div>
+            <h3>Stay Connected</h3>
+            <p>
+                Keep your phone charged and save important travel
+                information offline.
+            </p>
+        </div>
+
+        <div class="tip-card">
+            <div class="tip-icon">🛡️</div>
+            <h3>Travel Safely</h3>
+            <p>
+                Keep your important documents safe and stay aware
+                of your surroundings.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="feedback">
+
+    <h2>Share Your Feedback 💬</h2>
+
+    <p class="section-description">
+        Tell us what you think about your TripMate experience.
+    </p>
+
+    <div class="feedback-box">
+
+        <input
+            type="text"
+            id="feedback-name"
+            placeholder="Enter your name"
+        >
+
+        <textarea
+            id="feedback-text"
+            rows="5"
+            placeholder="Write your feedback..."
+        ></textarea>
+
+        <button type="button" id="submit-feedback">
+            Submit Feedback 💬
+        </button>
+
+        <p id="feedback-message"></p>
+
+    </div>
+
+</section>
+<section id="rating">
+    <h2>Rate Your TripMate Experience ⭐</h2>
+
+    <p class="section-description">
+        How would you rate your experience with TripMate?
+    </p>
+
+    <div class="rating-box">
+
+        <div class="stars" id="stars">
+            <span data-rating="1">★</span>
+            <span data-rating="2">★</span>
+            <span data-rating="3">★</span>
+            <span data-rating="4">★</span>
+            <span data-rating="5">★</span>
+        </div>
+
+        <p id="rating-text">Select a rating</p>
+
+
+        <button type="button" id="submit-rating">
+            Submit Rating ⭐
+        </button>
+
+        <p id="rating-message"></p>
+
+    </div>
+</section>
+```
+
+
+    <!-- =========================
+         Footer
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026 TripMate | Smart Trip Planner
+        </p>
+
+        <p>
+            Plan Better. Travel Smarter. ✈️
+        </p>
+
+    </footer>
+
+
+    <!-- Back To Top -->
+
+    <button id="back-to-top">
+        ↑
+    </button>
+
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

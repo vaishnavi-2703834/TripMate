@@ -1,0 +1,1829 @@
+/* ================================
+   TripMate - Smart Trip Planner
+   Main Stylesheet
+================================ */
+
+
+/* ---------- Basic Reset ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #243447;
+    background: #f4f9f9;
+    line-height: 1.6;
+}
+
+
+/* ---------- Navigation Bar ---------- */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h2 {
+    color: #008c95;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #243447;
+    font-weight: 600;
+
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #008c95;
+}
+
+
+/* ---------- Hero Section ---------- */
+
+#home {
+    min-height: 85vh;
+    padding: 80px 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(0, 119, 128, 0.75),
+            rgba(0, 76, 84, 0.85)
+        ),
+        linear-gradient(135deg, #48c6ef, #6f86d6);
+
+    color: white;
+}
+
+#home h1 {
+    font-size: clamp(40px, 7vw, 72px);
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+#home p {
+    max-width: 650px;
+    font-size: 20px;
+    margin-bottom: 35px;
+}
+
+
+/* ---------- Hero Button ---------- */
+
+#home a {
+    display: inline-block;
+
+    padding: 14px 30px;
+
+    background: white;
+    color: #007f87;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    border-radius: 30px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+#home a:hover {
+    transform: translateY(-4px);
+
+    background: #eaffff;
+
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ---------- Common Sections ---------- */
+
+main section:not(#home) {
+    max-width: 1100px;
+    min-height: 300px;
+
+    margin: 60px auto;
+    padding: 60px 30px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+
+    text-align: center;
+}
+
+main section h2 {
+    color: #007f87;
+
+    font-size: 32px;
+
+    margin-bottom: 10px;
+}
+
+
+/* ---------- Section Description ---------- */
+
+.section-description {
+    color: #667788;
+
+    margin-bottom: 35px;
+
+    font-size: 16px;
+}
+
+
+/* ================================
+   Trip Planning Form
+================================ */
+
+#trip-form {
+    max-width: 850px;
+
+    margin: 30px auto 0;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+
+    text-align: left;
+}
+
+
+/* ---------- Form Group ---------- */
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+/* ---------- Labels ---------- */
+
+.form-group label {
+    font-weight: 600;
+
+    color: #243447;
+
+    font-size: 15px;
+}
+
+
+/* ---------- Input & Select ---------- */
+
+.form-group input,
+.form-group select {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid #d5e2e5;
+
+    border-radius: 10px;
+
+    background: #f9fcfc;
+
+    color: #243447;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+
+/* ---------- Input Focus ---------- */
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #008c95;
+
+    background: white;
+
+    box-shadow: 0 0 0 3px rgba(0, 140, 149, 0.12);
+}
+
+
+/* ---------- Placeholder ---------- */
+
+.form-group input::placeholder {
+    color: #9aa9ad;
+}
+
+
+/* ---------- Generate Button Area ---------- */
+
+.form-button {
+    grid-column: 1 / -1;
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 10px;
+}
+
+
+/* ---------- Generate Button ---------- */
+
+.form-button button {
+    border: none;
+
+    padding: 14px 35px;
+
+    border-radius: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #008c95,
+        #00a6a6
+    );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(0, 140, 149, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.form-button button:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 25px rgba(0, 140, 149, 0.35);
+}
+
+.form-button button:active {
+    transform: translateY(0);
+}
+
+
+/* ---------- Footer ---------- */
+
+footer {
+    margin-top: 70px;
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    background: #073b4c;
+
+    color: white;
+}
+
+footer p {
+    font-size: 15px;
+}
+
+
+/* ================================
+   Responsive Design
+================================ */
+
+
+/* ---------- Tablets ---------- */
+
+@media (max-width: 768px) {
+
+    nav {
+        padding: 15px 20px;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    nav ul {
+        gap: 18px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    #home {
+        min-height: 75vh;
+
+        padding: 60px 20px;
+    }
+
+    #home p {
+        font-size: 18px;
+    }
+
+    main section:not(#home) {
+        margin: 40px 20px;
+
+        padding: 45px 20px;
+    }
+
+
+    /* Form becomes single column */
+
+    #trip-form {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .form-button {
+        grid-column: auto;
+    }
+}
+
+
+/* ---------- Mobile Phones ---------- */
+
+@media (max-width: 480px) {
+
+    .logo h2 {
+        font-size: 24px;
+    }
+
+    nav ul {
+        gap: 12px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    #home h1 {
+        font-size: 42px;
+    }
+
+    #home p {
+        font-size: 16px;
+    }
+
+    #home a {
+        padding: 12px 25px;
+    }
+
+    main section:not(#home) {
+        min-height: 250px;
+
+        margin: 30px 15px;
+
+        padding: 35px 15px;
+
+        border-radius: 15px;
+    }
+
+    main section h2 {
+        font-size: 26px;
+    }
+
+    #trip-form {
+        gap: 18px;
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 12px;
+    }
+
+    .form-button button {
+        width: 100%;
+
+        padding: 13px 20px;
+    }
+}
+/* =========================
+   Step 5 - Itinerary Design
+========================= */
+
+/* Main itinerary result area */
+#itinerary-result {
+    max-width: 1000px;
+    margin: 40px auto 0;
+}
+
+/* Itinerary main box */
+.itinerary-box {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Itinerary heading */
+.itinerary-box h2 {
+    text-align: center;
+    color: #008b8b;
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+
+/* Trip summary */
+.trip-summary {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    background: #f0fafa;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.trip-summary p {
+    margin: 0;
+    padding: 8px;
+    color: #34495e;
+}
+
+/* Daily itinerary heading area */
+.daily-plan {
+    display: grid;
+    gap: 20px;
+}
+
+/* Individual day card */
+.day-card {
+    background: #f8fcfc;
+    border: 1px solid #d8eeee;
+    border-radius: 15px;
+    padding: 22px;
+    transition: 0.3s ease;
+}
+
+/* Hover effect */
+.day-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Day heading */
+.day-card h3 {
+    color: #008b8b;
+    margin-bottom: 18px;
+    font-size: 22px;
+    border-bottom: 1px solid #d8eeee;
+    padding-bottom: 10px;
+}
+
+/* Activity text */
+.day-card p {
+    background: #ffffff;
+    padding: 13px;
+    margin: 10px 0;
+    border-radius: 8px;
+    line-height: 1.6;
+    color: #34495e;
+}
+
+/* Regenerate button */
+#regenerate-btn {
+    display: block;
+    margin: 30px auto 5px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #00a6a6, #008b8b);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Button hover */
+#regenerate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 139, 139, 0.3);
+}
+
+/* Error message */
+.error-message {
+    background: #fff3f3;
+    border: 1px solid #ffb3b3;
+    color: #c0392b;
+    padding: 18px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* =========================
+   Responsive Design
+========================= */
+
+@media (max-width: 768px) {
+
+    #itinerary-result {
+        margin: 25px 15px 0;
+    }
+
+    .itinerary-box {
+        padding: 20px;
+    }
+
+    .trip-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .day-card {
+        padding: 18px;
+    }
+
+    .itinerary-box h2 {
+        font-size: 24px;
+    }
+}
+/* =========================
+   Step 6 - Destination Cards
+========================= */
+
+.destination-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.destination-card {
+    background: #f8fcfc;
+    border: 1px solid #d8eeee;
+    padding: 25px 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.destination-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.destination-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.destination-card h3 {
+    color: #008b8b;
+    margin-bottom: 12px;
+    font-size: 21px;
+}
+
+.destination-card p {
+    color: #566573;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.destination-card span {
+    display: inline-block;
+    background: #e5f7f7;
+    color: #008b8b;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+/* Mobile layout */
+@media (max-width: 900px) {
+    .destination-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .destination-container {
+        grid-template-columns: 1fr;
+    }
+}
+/* =========================
+   Step 7 - Budget Calculator
+========================= */
+
+.budget-calculator {
+    max-width: 700px;
+    margin: 30px auto 0;
+    background: #f8fcfc;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #d8eeee;
+}
+
+.budget-input {
+    margin-bottom: 20px;
+}
+
+.budget-input label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #34495e;
+}
+
+.budget-input input,
+.budget-input select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbdede;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+#calculate-budget {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #00a6a6, #008b8b);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#calculate-budget:hover {
+    transform: translateY(-2px);
+}
+
+#budget-result {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #008b8b;
+}
+/* =========================
+   Step 8 - Travel Checklist
+========================= */
+
+.checklist-container {
+    max-width: 700px;
+    margin: 30px auto 20px;
+    display: grid;
+    gap: 12px;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #f8fcfc;
+    border: 1px solid #d8eeee;
+    padding: 15px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.checklist-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+}
+
+.checklist-item input {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.checklist-item input:checked + span {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+#checklist-progress {
+    text-align: center;
+    color: #008b8b;
+    font-weight: bold;
+    margin-top: 20px;
+}
+/* =========================
+   Step 9 - UI Improvements
+========================= */
+
+/* Navigation link animation */
+nav ul li a {
+    position: relative;
+    transition: 0.3s ease;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 50%;
+    bottom: -6px;
+    background: #00a6a6;
+    transition: 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: #00a6a6;
+}
+
+/* Improve section headings */
+section h2 {
+    position: relative;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+section h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #00a6a6;
+    margin: 10px auto 0;
+    border-radius: 5px;
+}
+
+/* Hero animation */
+#home h1 {
+    animation: fadeDown 0.8s ease;
+}
+
+#home p {
+    animation: fadeUp 1s ease;
+}
+
+#home a {
+    animation: fadeUp 1.2s ease;
+}
+
+/* Simple animations */
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Better button interaction */
+button,
+#home a {
+    transition: 0.3s ease;
+}
+
+button:active,
+#home a:active {
+    transform: scale(0.97);
+}
+
+/* Better form focus effect */
+.form-group input:focus,
+.form-group select:focus,
+.budget-input input:focus,
+.budget-input select:focus {
+    outline: none;
+    border-color: #00a6a6;
+    box-shadow: 0 0 0 3px rgba(0, 166, 166, 0.12);
+}
+
+/* Section spacing */
+section {
+    scroll-margin-top: 80px;
+}
+/* =========================
+   Step 10 - Final Polish
+========================= */
+
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: #008b8b;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transition: 0.3s ease;
+}
+
+#back-to-top:hover {
+    transform: translateY(-4px);
+    background: #006f6f;
+}
+
+/* Footer improvement */
+footer {
+    margin-top: 40px;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Better mobile navigation */
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    #home h1 {
+        font-size: 32px;
+    }
+
+    #home p {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 35px 20px;
+    }
+
+    .itinerary-box {
+        padding: 18px;
+    }
+
+    .budget-calculator {
+        padding: 20px;
+    }
+
+    #back-to-top {
+        right: 15px;
+        bottom: 15px;
+    }
+}
+/* =========================
+   Step 11 - How It Works
+========================= */
+
+.steps-container {
+    max-width: 1000px;
+    margin: 35px auto 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.step-card {
+    background: #f8fcfc;
+    border: 1px solid #d8eeee;
+    padding: 25px 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.step-number {
+    width: 45px;
+    height: 45px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background: #008b8b;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.step-card h3 {
+    color: #008b8b;
+    margin-bottom: 12px;
+}
+
+.step-card p {
+    color: #566573;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+
+@media (max-width: 900px) {
+
+    .steps-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .steps-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* =========================
+   Step 12 - About Section
+========================= */
+
+.about-container {
+    max-width: 1000px;
+    margin: 35px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.about-card {
+    background: #f8fcfc;
+    border: 1px solid #d8eeee;
+    padding: 28px 22px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.about-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.about-card h3 {
+    color: #008b8b;
+    margin-bottom: 12px;
+}
+
+.about-card p {
+    color: #566573;
+    line-height: 1.6;
+}
+
+/* Responsive About Section */
+
+@media (max-width: 800px) {
+
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #063b4c, #087f8c, #0b5968);
+}
+
+.hero-content {
+    max-width: 850px;
+    margin: auto;
+}
+
+.hero-tagline {
+    color: #b8ffff;
+    font-weight: bold;
+    font-size: 17px;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    font-size: 58px;
+    line-height: 1.15;
+    color: white;
+    margin-bottom: 22px;
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+}
+
+.hero h1 span {
+    color: #7fffff;
+}
+
+.hero-description {
+    max-width: 650px;
+    margin: 0 auto 30px;
+    color: #e9ffff;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 14px 25px;
+    background: white;
+    color: #056b78;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.hero-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.secondary-btn {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.secondary-btn:hover {
+    background: white;
+    color: #056b78;
+}
+/* =========================
+   Step 15 - Navbar Upgrade
+========================= */
+
+nav {
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+    padding: 15px 30px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    color: #12343b;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 9px 14px;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: #008b8b;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Mobile Navbar */
+
+@media (max-width: 700px) {
+
+    nav {
+        padding: 12px 10px;
+    }
+
+    nav ul {
+        gap: 4px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+        padding: 8px 9px;
+    }
+
+}
+/* =========================
+   Step 16 - Destination Cards Upgrade
+========================= */
+
+.destination-container {
+    max-width: 1100px;
+    margin: 40px auto 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.destination-card {
+    position: relative;
+    background: linear-gradient(145deg, #ffffff, #eefafa);
+    border: 1px solid #d5eeee;
+    border-radius: 18px;
+    padding: 30px 20px;
+    text-align: center;
+    overflow: hidden;
+    transition: 0.35s ease;
+}
+
+.destination-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #008b8b, #55d6d6);
+}
+
+.destination-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 139, 139, 0.18);
+}
+
+.destination-icon {
+    width: 75px;
+    height: 75px;
+    margin: 5px auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #dffafa;
+    border-radius: 50%;
+    font-size: 40px;
+    transition: 0.3s ease;
+}
+
+.destination-card:hover .destination-icon {
+    transform: scale(1.12) rotate(3deg);
+}
+
+.destination-card h3 {
+    color: #12343b;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.destination-card p {
+    color: #64777c;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.destination-card .tag {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 6px 13px;
+    border-radius: 20px;
+    background: #008b8b;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+
+    .destination-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .destination-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* =========================
+   Step 17 - Budget Calculator Upgrade
+========================= */
+
+.budget-calculator {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 35px;
+    background: linear-gradient(145deg, #ffffff, #eefafa);
+    border: 1px solid #d5eeee;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 139, 139, 0.10);
+}
+
+.budget-input {
+    margin-bottom: 20px;
+}
+
+.budget-input label {
+    display: block;
+    margin-bottom: 8px;
+    color: #12343b;
+    font-weight: 600;
+}
+
+.budget-input input,
+.budget-input select {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #c7dddd;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+    background: white;
+    transition: 0.3s ease;
+}
+
+.budget-input input:focus,
+.budget-input select:focus {
+    border-color: #008b8b;
+    box-shadow: 0 0 0 3px rgba(0, 139, 139, 0.10);
+}
+
+#calculate-budget {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #008b8b;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#calculate-budget:hover {
+    background: #006f6f;
+    transform: translateY(-2px);
+}
+
+#budget-result {
+    margin-top: 25px;
+    padding: 18px;
+    background: #dffafa;
+    border-left: 5px solid #008b8b;
+    border-radius: 10px;
+    color: #12343b;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+/* =========================
+   Step 18 - Checklist Upgrade
+========================= */
+
+.checklist-container {
+    max-width: 750px;
+    margin: 35px auto 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 17px 18px;
+    background: linear-gradient(145deg, #ffffff, #f1fbfb);
+    border: 1px solid #d5eeee;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.checklist-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 18px rgba(0, 139, 139, 0.12);
+    border-color: #008b8b;
+}
+
+.checklist-item input {
+    width: 19px;
+    height: 19px;
+    accent-color: #008b8b;
+    cursor: pointer;
+}
+
+.checklist-item span {
+    color: #12343b;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+/* Completed Item */
+
+.checklist-item input:checked + span {
+    color: #008b8b;
+    text-decoration: line-through;
+    opacity: 0.65;
+}
+
+#checklist-progress {
+    width: fit-content;
+    margin: 25px auto 0;
+    padding: 10px 18px;
+    background: #dffafa;
+    color: #006f6f;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .checklist-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* =========================
+   Step 19 - Itinerary Upgrade
+========================= */
+
+#itinerary-result {
+    max-width: 1000px;
+    margin: 35px auto 0;
+}
+
+.itinerary-box {
+    background: linear-gradient(145deg, #ffffff, #eefafa);
+    border: 1px solid #d5eeee;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0, 139, 139, 0.10);
+}
+
+.itinerary-box h3 {
+    color: #006f6f;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.trip-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.trip-summary div {
+    background: white;
+    border: 1px solid #d8eeee;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.trip-summary strong {
+    display: block;
+    color: #008b8b;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.trip-summary span {
+    color: #12343b;
+    font-weight: 600;
+}
+
+.daily-plan {
+    display: grid;
+    gap: 18px;
+}
+
+.day-card {
+    background: white;
+    border-left: 5px solid #008b8b;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    transition: 0.3s ease;
+}
+
+.day-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 139, 139, 0.12);
+}
+
+.day-card h4 {
+    color: #008b8b;
+    margin-bottom: 12px;
+    font-size: 19px;
+}
+
+.day-card p {
+    color: #566573;
+    line-height: 1.7;
+    margin: 6px 0;
+}
+
+#regenerate-btn {
+    display: block;
+    margin: 25px auto 0;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 10px;
+    background: #008b8b;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#regenerate-btn:hover {
+    background: #006f6f;
+    transform: translateY(-2px);
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .trip-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 450px) {
+
+    .trip-summary {
+        grid-template-columns: 1fr;
+    }
+
+}
+```css
+/* Rating Section */
+
+#rating {
+    background: #f5ffff;
+}
+
+.rating-box {
+    max-width: 550px;
+    margin: 35px auto;
+    padding: 35px;
+    text-align: center;
+    background: white;
+    border: 1px solid #d5eeee;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 139, 139, 0.10);
+}
+
+.stars {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.stars span {
+    font-size: 42px;
+    color: #d5dddd;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.stars span:hover {
+    transform: scale(1.15);
+}
+
+.stars span.active {
+    color: #ffc107;
+}
+
+#rating-text {
+    color: #566573;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+#submit-rating {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    background: #008b8b;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#submit-rating:hover {
+    background: #006f6f;
+    transform: translateY(-2px);
+}
+
+#rating-message {
+    margin-top: 18px;
+    color: #008b8b;
+    font-weight: bold;
+}
+
+@media (max-width: 500px) {
+    .rating-box {
+        margin: 30px 15px;
+        padding: 25px 15px;
+    }
+
+    .stars span {
+        font-size: 35px;
+    }
+}
+```
+
+
+    
+    .rating-summary {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rating-summary div {
+        width: 100%;
+        max-width: 220px;
+    }
+}
+
+/* Clear Form Button */
+
+#reset-trip {
+    width: 100%;
+    margin-top: 10px;
+    padding: 13px;
+    border: 2px solid #008b8b;
+    border-radius: 10px;
+    background: white;
+    color: #008b8b;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#reset-trip:hover {
+    background: #008b8b;
+    color: white;
+    transform: translateY(-2px);
+}
+/* Final Section Polish */
+
+section:nth-of-type(even) {
+    background: #f8ffff;
+}
+
+section h2 {
+    font-size: 32px;
+    color: #12343b;
+}
+
+.section-description {
+    color: #64777c;
+    line-height: 1.6;
+}
+
+button {
+    font-family: inherit;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+/* Simple Fresher Style */
+
+footer {
+    background: #e8fafa;
+    color: #12343b;
+    border-top: 2px solid #008b8b;
+    padding: 25px 15px;
+}
+
+footer p:first-child {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+footer p:last-child {
+    color: #008b8b;
+    font-size: 14px;
+}
+/* =========================
+   Smart Travel Tips
+========================= */
+
+#travel-tips {
+    background: #f5ffff;
+}
+
+.tips-container {
+    max-width: 1000px;
+    margin: 40px auto 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.tip-card {
+    background: white;
+    border: 1px solid #d5eeee;
+    border-radius: 18px;
+    padding: 28px 20px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 25px rgba(0, 139, 139, 0.15);
+    border-color: #008b8b;
+}
+
+.tip-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #dffafa;
+    border-radius: 50%;
+    font-size: 32px;
+}
+
+.tip-card h3 {
+    color: #12343b;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.tip-card p {
+    color: #64777c;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+    .tips-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    .tips-container {
+        grid-template-columns: 1fr;
+    }
+}
+/* =========================
+   Feedback Section
+========================= */
+
+#feedback {
+    background: white;
+}
+
+.feedback-box {
+    max-width: 600px;
+    margin: 35px auto;
+    padding: 30px;
+    background: linear-gradient(145deg, #ffffff, #eefafa);
+    border: 1px solid #d5eeee;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 139, 139, 0.10);
+}
+
+.feedback-box input,
+.feedback-box textarea {
+    width: 100%;
+    padding: 13px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #c7dddd;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    outline: none;
+    resize: vertical;
+}
+
+.feedback-box input:focus,
+.feedback-box textarea:focus {
+    border-color: #008b8b;
+    box-shadow: 0 0 0 3px rgba(0, 139, 139, 0.10);
+}
+
+#submit-feedback {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 10px;
+    background: #008b8b;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#submit-feedback:hover {
+    background: #006f6f;
+    transform: translateY(-2px);
+}
+
+#feedback-message {
+    margin-top: 15px;
+    text-align: center;
+    color: #008b8b;
+    font-weight: bold;
+}
